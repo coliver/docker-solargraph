@@ -61,14 +61,14 @@ Valid ruby versions here: https://hub.docker.com/_/ruby
 If you don't need to specify a proxy (I did, I'm on a work vpn), remove the build-args below:
 
 ```shell
-docker build --no-cache --build-arg HTTP_PROXY=$HTTP_PROXY --build-arg HTTPS_PROXY=$HTTPS_PROXY .
+docker build -t cgoliver/docker-solargraph --no-cache --build-arg HTTP_PROXY=$HTTP_PROXY --build-arg HTTPS_PROXY=$HTTPS_PROXY .
 ```
 
 ## Run and tag the container
 
 Replace the strings in { } below.
 
-```shell
+```
 docker run -d \
   --name=docker-solargraph \
   --net={Name of your projects docker network} \
@@ -81,4 +81,4 @@ docker run -d \
 
 Close and reopen VSCode or open the command palette and Reload Window / Reload Solargraph.
 
-You can view the logs of the conatiner to debug if things aren't working at this point.
+You can view the logs of the container to debug if things aren't working at this point.
